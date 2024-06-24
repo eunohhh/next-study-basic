@@ -1,6 +1,7 @@
-import returnFetch from "return-fetch";
+import returnFetchJson from "return-fetch-json";
 
-const authFetch = returnFetch({
+const authFetch = returnFetchJson({
+    jsonParser: JSON.parse, // `jsonParser` property is omittable. You can use your custom parser.
     baseUrl: process.env.AUTH_BASE_URL,
     headers: { Accept: "application/json" },
 });
